@@ -71,13 +71,13 @@ Then, create a simple main as follows:
 
 ```java
 public static void main(String[] args) {
-		Injector injector = new MydslStandaloneSetupGenerated().createInjectorAndDoEMFRegistration();
-		XtextResourceSet resourceSet = injector.getInstance(XtextResourceSet.class);
-		Resource resource = resourceSet.getResource(URI.createFileURI("./example.mydsl"), true);
-		
-		Model model = (Model) resource.getContents().get(0);
-		model.getGreetings().forEach(System.out::println);
-	}
+	Injector injector = new MydslStandaloneSetupGenerated().createInjectorAndDoEMFRegistration();
+	XtextResourceSet resourceSet = injector.getInstance(XtextResourceSet.class);
+	Resource resource = resourceSet.getResource(URI.createFileURI("./example.mydsl"), true);
+
+	Model model = (Model) resource.getContents().get(0);
+	model.getGreetings().forEach(System.out::println);
+}
 ```
 
 You can now execute the class to parse your grammar with a standalone Java application.
